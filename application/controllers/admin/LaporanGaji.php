@@ -25,11 +25,14 @@ class LaporanGaji extends CI_Controller{
   }
 
   public function cetakLaporanGaji(){
+    $bulan = $this->input->post('bulan');
+    // echo $bulan;
+    // die;
     $data['title'] = "Cetak Laporan Gaji Pegawai";
 
-    if((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')){
-      $bulan = $_GET['bulan'];
-      $tahun = $_GET['tahun'];
+    if((isset($_POST['bulan']) && $_POST['bulan'] != '') && (isset($_POST['tahun']) && $_POST['tahun'] != '')){
+      $bulan = $_POST['bulan'];
+      $tahun = $_POST['tahun'];
       $bulanTahun = $bulan.$tahun;
     }
     else{
